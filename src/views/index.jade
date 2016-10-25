@@ -1,0 +1,19 @@
+doctype html
+html
+	head
+		script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+	body
+		h1(style='text-align: center') E-BOOK READER
+		div(style='text-align: center')
+			img(class="thumbs" alt="super cool book" style='height: 150px; width: 100px; padding-left: 200px; padding-right: 200px' src='./100years.jpg')
+			img(class="thumbs" alt="super fun book" style='height: 150px; width: 100px; padding-right: 200px' src='./harrypotter.jpg')
+			img(class="thumbs" alt="super nice book" style='height: 150px; width: 100px; padding-right: 200px' src='./montecristo.jpg')
+		div(style="text-align: center")
+			img(id="largeImage" src="100years.jpg" style="height: 350px; width: 250px; padding-top: 50px;")
+		div(id="description" style="text-align: center") Super cool book
+
+		script.
+			$('.thumbs').click(function(){
+				$('#largeImage').attr('src',$(this).attr('src'));
+				$('#description').html($(this).attr('alt'));
+			});
